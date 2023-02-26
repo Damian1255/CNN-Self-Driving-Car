@@ -1,9 +1,7 @@
 import pygame
 
-# Initialize the pygame library
+# Initialize the pygame & joystick modules
 pygame.init()
-
-# Initialize the joystick module
 pygame.joystick.init()
 
 # Check for available joysticks
