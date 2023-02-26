@@ -27,5 +27,10 @@ while True:
     button_1 = joystick.get_button(0)
     button_2 = joystick.get_button(1)
 
+    # Normalize the axes
+    x_axis = round(x_axis, 2)
+    y_axis = round(y_axis, 2)
+    z_axis = round(z_axis, 2)
+
     # Do something with the input data
-    print(f"x-axis: {x_axis}, y-axis: {y_axis}, z-axis: {z_axis}, button 1: {button_1}, button 2: {button_2}")
+    print(f"Steering: {x_axis}, throttle: {y_axis}, brake: {z_axis}, button 1: {button_1}, button 2: {button_2}", end="\r")
