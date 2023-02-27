@@ -19,16 +19,14 @@ while True:
     pygame.event.pump()
 
     # Read the joystick axes and buttons
-    x_axis = joystick.get_axis(0)
-    y_axis = joystick.get_axis(1)
-    z_axis = joystick.get_axis(2)
-    button_1 = joystick.get_button(0)
-    button_2 = joystick.get_button(1)
+    steering = joystick.get_axis(0)
+    throttle = joystick.get_axis(1)
+    brake = joystick.get_axis(2)
 
     # Normalize the axes
-    x_axis = round(x_axis, 2)
-    y_axis = round(y_axis, 2)
-    z_axis = round(z_axis, 2)
+    steering = round(steering, 2)
+    throttle = round(throttle, 2)
+    brake = round(brake, 2)
 
     # Do something with the input data
-    print(f"Steering: {x_axis}, throttle: {y_axis}, brake: {z_axis}, button 1: {button_1}, button 2: {button_2}", end="\r")
+    print(f"Steering: {steering}, throttle: {throttle}, brake: {brake}", end="\r")
