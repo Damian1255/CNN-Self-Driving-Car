@@ -30,12 +30,12 @@ while True:
     screen = cv2.cvtColor(screen, cv2.COLOR_BGR2RGB)
     screen = screen.reshape(-1, 270, 480, 3)
 
-    # Use the model to predict the controls
     preds = model.predict(screen)
     preds = str(preds).replace("[", "").replace("]", "")
     preds = [float(i) for i in preds.split()]
 
     steering_pred, throttle_pred, brake_pred = preds[0], preds[1], preds[2]
 
-    # Update the gamepad controls
+    # Update the controls
     controls(throttle=throttle_pred, steering=steering_pred, brake=brake_pred)
+    time.sleep(0.01)

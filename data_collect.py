@@ -47,7 +47,7 @@ while True:
     # print(f"Steering: {steering}, throttle: {throttle}, brake: {brake}, recording: {len(training_data)}", end="\r")
     # print(f"Recording: {len(training_data)}", end="\r")
 
-    if len(training_data) == 5000:
+    if len(training_data) == 2500:
         print('Recording Ended')
         with open('Data/test_data.pickle', 'wb') as f:
             pickle.dump(training_data, f)
